@@ -18,8 +18,8 @@ public class Page1 {
 
 	@When("user clicks on selenium Example page")
 	public void user_clicks_on_selenium_example_page() {
-HomePage obj_HomePage=new HomePage(wd);
-obj_HomePage.link_Selenium_Example_Page();
+		HomePage obj_HomePage=new HomePage(wd);
+		obj_HomePage.link_Selenium_Example_Page();
 	}
 
 	@Then("system should open {string}")
