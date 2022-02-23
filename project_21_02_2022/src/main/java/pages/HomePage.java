@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import CommonMethods.CommonMethods;
+import CommonMethods.SpecificToSelenium;
 
 public class HomePage {
-	CommonMethods obj_CommonMethods=new CommonMethods();
+	SpecificToSelenium obj_SpecificToSelenium=new SpecificToSelenium();
+	
 	public HomePage(WebDriver wd) {
 		PageFactory.initElements(wd,this);
 
@@ -17,7 +19,7 @@ public class HomePage {
 	WebElement link_SeleniumExamplePage;
 
 	public void link_Selenium_Example_Page() {
-		obj_CommonMethods.clickOnTheLink(link_SeleniumExamplePage);
+		obj_SpecificToSelenium.webElement_click(link_SeleniumExamplePage);
 
 	}
 }

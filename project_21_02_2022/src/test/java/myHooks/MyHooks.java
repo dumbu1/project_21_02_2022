@@ -18,7 +18,6 @@ public class MyHooks {
 	public void closeBrowser() {
 		SpecificToSelenium obj_SpecificToSelenium=new SpecificToSelenium();
 		obj_SpecificToSelenium.close(driver);
-		
 	}
 
 }

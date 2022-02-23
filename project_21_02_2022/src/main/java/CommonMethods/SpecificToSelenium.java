@@ -3,6 +3,7 @@ package CommonMethods;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -12,6 +13,7 @@ import util.PropertyReader;
 
 public class SpecificToSelenium {
 	
+	public static WebDriver driver=null;
 	 
 	private static Properties value;
 	
@@ -24,7 +26,7 @@ public class SpecificToSelenium {
 	
 	public WebDriver  setDriver() {
 	
-		WebDriver driver=null;
+		
 		
 	if(value.getProperty("browser").equalsIgnoreCase("chrome")) {
 		  ChromeOptions obj_ChromeOptions=new ChromeOptions();
@@ -36,6 +38,12 @@ public class SpecificToSelenium {
 	  
 	  return driver;
 		}
+	
+	
+	//to get browser
+	public static WebDriver getDriver() {
+		return driver;
+	}
 
 
 	//to open url
@@ -47,5 +55,26 @@ public class SpecificToSelenium {
 	//to close browser
 	public void close(WebDriver driver) {
 		driver.close();
+	}
+	
+	
+	
+	
+	
+	public void webElement_click(WebElement webElement ) {
+		if(webElement.isEnabled()) {
+			webElement.click();
+		}
+
+	}
+	public void webElement_EnterText(WebElement webElement, String text) {
+		if(webElement.isEnabled()) {
+			webElement.sendKeys(text);
+		}
+		
+	}
+	
+	public String getText_From_TextField(WebElement webElement) {
+		return webElement.getAttribute("value");
 	}
 }
